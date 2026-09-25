@@ -25,20 +25,40 @@
             padding-bottom: 60px;
         }
         
-        /* Navbar */
+        /* Navbar (Menyu) */
         .navbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
             background-color: var(--rasta-green);
+            padding: 15px;
             border-bottom: 4px solid var(--rasta-yellow);
+            text-align: center;
         }
         .navbar h1 {
             font-size: 20px;
             color: var(--text-light);
             letter-spacing: 2px;
             text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border: 1px solid var(--rasta-yellow);
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: var(--rasta-yellow);
+            color: var(--text-dark);
         }
 
         /* Hero */
@@ -141,6 +161,18 @@
 
     <div class="navbar">
         <h1>UNP Artisan Treasure</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="safari.html">Safari</a>
+            <a href="zanzibar.html">Zanzibar</a>
+            <a href="serengeti.html">Serengeti</a>
+            <a href="ngorongoro.html">Ngorongoro</a>
+            <a href="mikumi.html">Mikumi</a>
+            <a href="ruaha.html">Ruaha</a>
+            <a href="tarangire.html">Tarangire</a>
+            <a href="culture.html">Culture</a>
+            <a href="booking.html">Booking</a>
+        </div>
     </div>
 
     <div class="hero">
@@ -148,7 +180,6 @@
         <p>Your unique platform for <strong>Motivation, Rasta Education, Tourism, Art, and Business</strong>. We cultivate artistic lives and showcase Rastafari culture to the world.</p>
         
         <div class="btn-container">
-            <!-- Link ya kawaida ya HTML inayofanya kazi kwenye simu zote -->
             <a href="https://wa.me/255655728982?text=Hello%20UNP%20Artisan,%20I%20would%20like%20to%20know%20more." class="btn btn-whatsapp" target="_blank">Contact Us (WhatsApp)</a>
             <a href="mailto:salimnasoro11@gmail.com" class="btn btn-email">Send Email</a>
             <a href="#donate" class="btn btn-outline">Donate / Support</a>
@@ -174,14 +205,12 @@
         <h3>Donate / Give Support</h3>
         <p>Your donation helps us develop art, music, and empower the youth. Everything you give returns to the community in one way or another.</p>
         <p><strong>M-Pesa:</strong> 0655728982 (Name: Salim Nasoro)</p>
-        <!-- Link ya kawaida ya HTML inayofanya kazi kwenye simu zote -->
         <a href="https://wa.me/255655728982?text=I%20would%20like%20to%20donate%20to%20UNP%20Artisan." class="btn btn-whatsapp" style="margin-top: 15px;" target="_blank">Donate Now</a>
     </div>
 
     <div id="volunteer" class="section-box">
         <h3>Volunteer</h3>
         <p>Do you love art, music, or Rastafari culture? Join us as a volunteer. We need photographers, creatives, and music lovers to further grow our community.</p>
-        <!-- Link ya kawaida ya HTML inayofanya kazi kwenye simu zote -->
         <a href="https://wa.me/255655728982?text=I%20would%20like%20to%20volunteer%20at%20UNP%20Artisan." class="btn btn-outline" target="_blank">Join Us</a>
     </div>
 
