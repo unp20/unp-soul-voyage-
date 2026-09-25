@@ -148,7 +148,8 @@
         <p>Your unique platform for <strong>Motivation, Rasta Education, Tourism, Art, and Business</strong>. We cultivate artistic lives and showcase Rastafari culture to the world.</p>
         
         <div class="btn-container">
-            <button onclick="openWhatsApp()" class="btn btn-whatsapp">Contact Us (WhatsApp)</button>
+            <!-- Link ya kawaida ya HTML inayofanya kazi kwenye simu zote -->
+            <a href="https://wa.me/255655728982?text=Hello%20UNP%20Artisan,%20I%20would%20like%20to%20know%20more." class="btn btn-whatsapp" target="_blank">Contact Us (WhatsApp)</a>
             <a href="mailto:salimnasoro11@gmail.com" class="btn btn-email">Send Email</a>
             <a href="#donate" class="btn btn-outline">Donate / Support</a>
         </div>
@@ -173,42 +174,21 @@
         <h3>Donate / Give Support</h3>
         <p>Your donation helps us develop art, music, and empower the youth. Everything you give returns to the community in one way or another.</p>
         <p><strong>M-Pesa:</strong> 0655728982 (Name: Salim Nasoro)</p>
-        <button onclick="openWhatsAppDonate()" class="btn btn-whatsapp" style="margin-top: 15px;">Donate Now</button>
+        <!-- Link ya kawaida ya HTML inayofanya kazi kwenye simu zote -->
+        <a href="https://wa.me/255655728982?text=I%20would%20like%20to%20donate%20to%20UNP%20Artisan." class="btn btn-whatsapp" style="margin-top: 15px;" target="_blank">Donate Now</a>
     </div>
 
     <div id="volunteer" class="section-box">
         <h3>Volunteer</h3>
         <p>Do you love art, music, or Rastafari culture? Join us as a volunteer. We need photographers, creatives, and music lovers to further grow our community.</p>
-        <button onclick="openWhatsAppVolunteer()" class="btn btn-outline">Join Us</button>
+        <!-- Link ya kawaida ya HTML inayofanya kazi kwenye simu zote -->
+        <a href="https://wa.me/255655728982?text=I%20would%20like%20to%20volunteer%20at%20UNP%20Artisan." class="btn btn-outline" target="_blank">Join Us</a>
     </div>
 
     <footer>
         <p>&copy; 2026 UNP Artisan Treasure & Nyasix Irie Sas. All rights reserved.</p>
         <p>Contact us: <a href="mailto:salimnasoro11@gmail.com">salimnasoro11@gmail.com</a> | WhatsApp: +255 655 728 982</p>
     </footer>
-
-    <script>
-        function openWhatsApp() {
-            var phone = "255655728982";
-            var message = "Hello UNP Artisan, I would like to know more.";
-            var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-            window.open(url, "_blank");
-        }
-
-        function openWhatsAppDonate() {
-            var phone = "255655728982";
-            var message = "I would like to donate to UNP Artisan.";
-            var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-            window.open(url, "_blank");
-        }
-
-        function openWhatsAppVolunteer() {
-            var phone = "255655728982";
-            var message = "I would like to volunteer at UNP Artisan.";
-            var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-            window.open(url, "_blank");
-        }
-    </script>
 
 </body>
 </html>
