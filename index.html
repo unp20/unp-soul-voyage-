@@ -3,150 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNP Soul Voyage | Luxury Tanzania & Zanzibar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <title>UNP Artisan Treasure | Nyasix Irie Sas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #EFEBE3; color: #2C2C2C; line-height: 1.6; overflow-x: hidden; padding-bottom: 80px; }
-
-        /* ===== NAVBAR ===== */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 18px; background-color: #EFEBE3; position: fixed; top: 0; width: 100%; z-index: 100; }
-        .logo a { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 2px; text-decoration: none; color: #2C2C2C; font-weight: 400; font-style: italic; white-space: nowrap; }
-        .nav-right { display: flex; align-items: center; gap: 8px; }
-        .btn-plan { background-color: #C49A7A; color: #FFFFFF; padding: 8px 12px; text-decoration: none; font-size: 0.55rem; letter-spacing: 1px; text-transform: uppercase; border-radius: 2px; white-space: nowrap; }
-        .search-icon { width: 18px; height: 18px; cursor: pointer; }
-        .menu-icon { display: flex; flex-direction: column; gap: 4px; cursor: pointer; }
-        .menu-icon span { width: 20px; height: 1.5px; background-color: #2C2C2C; }
-
-        /* ===== HERO ===== */
-        .hero-section { position: relative; width: 100%; height: 80vh; background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; margin-top: 60px; }
-        .hero-section::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.35); z-index: 1; }
-        .hero-content { position: relative; z-index: 2; text-align: center; color: #FFFFFF; width: 90%; }
-        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: 1.8rem; letter-spacing: 3px; font-weight: 400; margin-bottom: 10px; line-height: 1.2; }
-        .hero-sub { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; }
-
-        /* ===== INTRO ===== */
-        .intro-section { padding: 60px 22px; text-align: center; max-width: 800px; margin: 0 auto; background-color: #EFEBE3; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 20px; color: #2C2C2C; line-height: 1.3; }
-        .section-text { font-size: 0.9rem; color: #555; font-weight: 300; line-height: 1.8; }
-
-        /* ===== SERVICES ===== */
-        .services-section { background-color: #E8E3DA; padding: 60px 22px; }
-        .services-grid { display: flex; flex-direction: column; gap: 25px; max-width: 800px; margin: 0 auto; }
-        .service-card { background-color: #EFEBE3; padding: 0 0 25px 0; overflow: hidden; }
-        .service-card img { width: 100%; height: 220px; object-fit: cover; }
-        .service-card-content { padding: 22px 18px 0 18px; }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 400; margin-bottom: 8px; }
-        .service-card p { font-size: 0.85rem; color: #666; font-weight: 300; }
-        .service-card a { text-decoration: none; color: inherit; display: block; }
-
-        /* ===== JOURNEYS ===== */
-        .journeys-section { padding: 60px 22px; max-width: 1000px; margin: 0 auto; background-color: #EFEBE3; }
-        .section-title-left { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 15px; text-align: left; }
-        .section-text-left { font-size: 0.9rem; color: #555; font-weight: 300; margin-bottom: 30px; text-align: left; }
-        .featured-image { width: 100%; height: 280px; overflow: hidden; }
-        .featured-image img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* ===== CONTACT ===== */
-        .contact-section { padding: 60px 22px 80px 22px; text-align: center; background-color: #E8E3DA; }
-        .contact-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 15px; }
-        .contact-section p { font-size: 0.85rem; color: #666; margin-bottom: 25px; font-weight: 300; }
-        .contact-buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; }
-        .btn-whatsapp { display: inline-block; padding: 14px 30px; background-color: #25D366; color: #FFFFFF; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; width: 100%; max-width: 300px; }
-        .btn-email { display: inline-block; padding: 14px 30px; background-color: #C49A7A; color: #FFFFFF; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; width: 100%; max-width: 300px; }
-        .copyright { margin-top: 35px; font-size: 0.65rem; color: #999; }
-
-        /* ===== RESERVE BAR ===== */
-        .reserve-bar { position: fixed; bottom: 0; left: 0; width: 100%; padding: 12px 15px; background-color: #EFEBE3; z-index: 100; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }
-        .btn-reserve { display: block; width: 100%; background-color: #2C2C2C; color: #FFFFFF; text-decoration: none; padding: 15px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
-
-        @media (min-width: 768px) {
-            .navbar { padding: 20px 40px; }
-            .logo a { font-size: 1.4rem; letter-spacing: 3px; }
-            .btn-plan { padding: 12px 22px; font-size: 0.7rem; }
-            .services-grid { flex-direction: row; justify-content: space-between; }
-            .service-card { flex: 1; }
-            .hero-content h1 { font-size: 4.5rem; }
-            .section-title { font-size: 2.2rem; }
-            .section-title-left { font-size: 2rem; }
-            .contact-buttons { flex-direction: row; justify-content: center; }
+        /* Rangi za Rasta: Kijani na Njano tu */
+        :root {
+            --rasta-green: #1a5c1a;
+            --rasta-yellow: #d4a017;
+            --bg-color: #f9f9f9;
+            --text-dark: #222222;
+            --text-light: #ffffff;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+        
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background-color: var(--rasta-green);
+            border-bottom: 4px solid var(--rasta-yellow);
+        }
+        .navbar h1 {
+            font-size: 20px;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+        }
+        .hero h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: var(--rasta-green);
+        }
+        .hero p {
+            font-size: 15px;
+            color: #555555;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+        }
+
+        /* Buttons */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 0 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-whatsapp { background-color: #25D366; color: #fff; }
+        .btn-whatsapp:hover { background-color: #1ebe5d; }
+        .btn-email { background-color: var(--rasta-yellow); color: var(--text-dark); }
+        .btn-email:hover { background-color: #b88a10; }
+        .btn-outline { background-color: transparent; color: var(--rasta-green); border: 2px solid var(--rasta-green); }
+        .btn-outline:hover { background-color: var(--rasta-green); color: #fff; }
+
+        /* Content Boxes */
+        .section-box {
+            background-color: #ffffff;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--rasta-green);
+        }
+        .section-box:nth-child(even) {
+            border-left: 5px solid var(--rasta-yellow);
+        }
+        .section-box h3 {
+            color: var(--rasta-green);
+            margin-top: 0;
+            font-size: 20px;
+            border-bottom: 2px solid var(--rasta-yellow);
+            padding-bottom: 8px;
+        }
+        .section-box:nth-child(even) h3 {
+            color: var(--rasta-yellow);
+            border-bottom: 2px solid var(--rasta-green);
+        }
+        .section-box p {
+            color: #444444;
+            font-size: 15px;
+        }
+        .highlight-text {
+            color: var(--rasta-green);
+            font-weight: bold;
+        }
+        .section-box:nth-child(even) .highlight-text {
+            color: var(--rasta-yellow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            background-color: var(--rasta-green);
+            color: #ffffff;
+            font-size: 13px;
+            border-top: 5px solid var(--rasta-yellow);
+            margin-top: 30px;
+        }
+        footer a { color: var(--rasta-yellow); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-            <a href="index.html">UNP SOUL VOYAGE</a>
-        </div>
-        <div class="nav-right">
-            <a href="booking.html" class="btn-plan">Plan Your Trip</a>
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <div class="menu-icon">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </header>
+    <div class="navbar">
+        <h1>UNP Artisan Treasure</h1>
+    </div>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>UNP SOUL VOYAGE</h1>
-            <p class="hero-sub">where the wild meets the sea</p>
+    <div class="hero">
+        <h2>Welcome to the Irie World</h2>
+        <p>Your unique platform for <strong>Motivation, Rasta Education, Tourism, Art, and Business</strong>. We cultivate artistic lives and showcase Rastafari culture to the world.</p>
+        
+        <div class="btn-container">
+            <button onclick="openWhatsApp()" class="btn btn-whatsapp">Contact Us (WhatsApp)</button>
+            <a href="mailto:salimnasoro11@gmail.com" class="btn btn-email">Send Email</a>
+            <a href="#donate" class="btn btn-outline">Donate / Support</a>
         </div>
-    </section>
+    </div>
 
-    <section class="intro-section">
-        <h2 class="section-title">Where the wild brings you back to yourself</h2>
-        <p class="section-text">
-            Guided by an enduring purpose to protect and preserve Tanzania's wilderness for future generations, UNP Soul Voyage curates unhurried journeys across some of the continent's most expansive, untouched landscapes.
-        </p>
-    </section>
+    <div class="section-box">
+        <h3>Nyasix Irie Sas: The Inner Rasta Spirit</h3>
+        <p><span class="highlight-text">Nyasix Irie Sas</span> is the spirit within Rasta. It is the spiritual force that guides our daily lives. Rasta Fe Brook Irie Sas represents this inner identity, bringing peace, love, and self-awareness. This is not just a religion; it is a lifestyle that liberates us economically and spiritually.</p>
+    </div>
 
-    <section class="services-section">
-        <div class="services-grid">
-            <div class="service-card">
-                <a href="safari.html">
-                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=800&auto=format&fit=crop" alt="Safari">
-                    <div class="service-card-content">
-                        <h3>Safari Adventures</h3>
-                        <p>Serengeti, Ngorongoro, Tarangire & Mikumi National Park.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="service-card">
-                <a href="zanzibar.html">
-                    <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=800&auto=format&fit=crop" alt="Zanzibar">
-                    <div class="service-card-content">
-                        <h3>Beach Escapes</h3>
-                        <p>Pristine white sands and turquoise waters of Zanzibar.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="service-card">
-                <a href="culture.html">
-                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=800&auto=format&fit=crop" alt="Culture">
-                    <div class="service-card-content">
-                        <h3>Cultural Tours</h3>
-                        <p>Stone Town, Maasai and Swahili heritage.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+    <div class="section-box">
+        <h3>UNP Artisan Treasure: Rastafari Fashion & Motivation</h3>
+        <p><span class="highlight-text">UNP Artisan Treasure</span> is a collection of Rastafari Fashion Business and Motivation. We sell Rasta fashion items, handmade crafts, and music that reflects African culture. Beyond business, we provide motivation to the youth so they can liberate themselves economically through their talents and promote Tanzanian tourism.</p>
+    </div>
 
-    <section class="journeys-section">
-        <h2 class="section-title-left">Explore our unique collection</h2>
-        <p class="section-text-left">
-            UNP Soul Voyage offers exclusive access to Tanzania's most sought-after wilderness areas — from the Great Migration in the Serengeti to the pristine beaches of Zanzibar.
-        </p>
-        <div class="featured-image">
-            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1200&auto=format&fit=crop" alt="Serengeti Safari">
-        </div>
-    </section>
+    <div class="section-box">
+        <h3>Tourism & Artistic Life</h3>
+        <p>We promote Tanzanian tourism by connecting visitors with our natural culture. Through art and music, we provide a platform for artists, photographers, and creatives to develop youth talents and showcase Rastafari culture to the world.</p>
+    </div>
 
-    <section class="contact-section">
-        <h2>Connect with us</h2>
-        <p>Send us a message and our team will design your dream 
+    <div id="donate" class="section-box">
+        <h3>Donate / Give Support</h3>
+        <p>Your donation helps us develop art, music, and empower the youth. Everything you give returns to the community in one way or another.</p>
+        <p><strong>M-Pesa:</strong> 0655728982 (Name: Salim Nasoro)</p>
+        <button onclick="openWhatsAppDonate()" class="btn btn-whatsapp" style="margin-top: 15px;">Donate Now</button>
+    </div>
+
+    <div id="volunteer" class="section-box">
+        <h3>Volunteer</h3>
+        <p>Do you love art, music, or Rastafari culture? Join us as a volunteer. We need photographers, creatives, and music lovers to further grow our community.</p>
+        <button onclick="openWhatsAppVolunteer()" class="btn btn-outline">Join Us</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 UNP Artisan Treasure & Nyasix Irie Sas. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:salimnasoro11@gmail.com">salimnasoro11@gmail.com</a> | WhatsApp: +255 655 728 982</p>
+    </footer>
+
+    <script>
+        function openWhatsApp() {
+            var phone = "255655728982";
+            var message = "Hello UNP Artisan, I would like to know more.";
+            var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+            window.open(url, "_blank");
+        }
+
+        function openWhatsAppDonate() {
+            var phone = "255655728982";
+            var message = "I would like to donate to UNP Artisan.";
+            var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+            window.open(url, "_blank");
+        }
+
+        function openWhatsAppVolunteer() {
+            var phone = "255655728982";
+            var message = "I would like to volunteer at UNP Artisan.";
+            var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+</html>
