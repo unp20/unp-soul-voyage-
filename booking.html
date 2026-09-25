@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking | UNP Soul Voyage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #EFEBE3; color: #2C2C2C; line-height: 1.6; overflow-x: hidden; padding-bottom: 80px; }
+
+        /* ===== NAVBAR ===== */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 18px; background-color: #EFEBE3; position: fixed; top: 0; width: 100%; z-index: 100; }
+        .logo a { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 2px; text-decoration: none; color: #2C2C2C; font-weight: 400; font-style: italic; white-space: nowrap; }
+        .nav-right { display: flex; align-items: center; gap: 8px; }
+        .btn-plan { background-color: #C49A7A; color: #FFFFFF; padding: 8px 12px; text-decoration: none; font-size: 0.55rem; letter-spacing: 1px; text-transform: uppercase; border-radius: 2px; white-space: nowrap; }
+        .search-icon { width: 18px; height: 18px; cursor: pointer; }
+        .menu-icon { display: flex; flex-direction: column; gap: 4px; cursor: pointer; }
+        .menu-icon span { width: 20px; height: 1.5px; background-color: #2C2C2C; }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header { padding: 120px 22px 40px 22px; text-align: center; background-color: #EFEBE3; }
+        .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; margin-bottom: 15px; color: #2C2C2C; }
+        .page-header p { font-size: 0.9rem; color: #555; font-weight: 300; max-width: 600px; margin: 0 auto; }
+
+        /* ===== FORM ===== */
+        .form-section { padding: 40px 22px 60px 22px; background-color: #EFEBE3; }
+        .form-container { max-width: 600px; margin: 0 auto; background-color: #E8E3DA; padding: 40px 25px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: #2C2C2C; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid rgba(0,0,0,0.15); background-color: #EFEBE3; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #2C2C2C; border-radius: 2px; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #C49A7A; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .btn-submit { display: block; width: 100%; background-color: #25D366; color: #FFFFFF; text-decoration: none; padding: 16px; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 500; margin-top: 10px; }
+        .btn-submit:hover { background-color: #1EBE5A; }
+        .form-note { font-size: 0.75rem; color: #888; text-align: center; margin-top: 15px; font-weight: 300; }
+
+        /* ===== CONTACT ===== */
+        .contact-section { padding: 60px 22px 80px 22px; text-align: center; background-color: #E8E3DA; }
+        .contact-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 15px; }
+        .contact-section p { font-size: 0.85rem; color: #666; margin-bottom: 25px; font-weight: 300; }
+        .contact-buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+        .btn-whatsapp { display: inline-block; padding: 14px 30px; background-color: #25D366; color: #FFFFFF; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; width: 100%; max-width: 300px; }
+        .btn-email { display: inline-block; padding: 14px 30px; background-color: #C49A7A; color: #FFFFFF; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; width: 100%; max-width: 300px; }
+        .copyright { margin-top: 35px; font-size: 0.65rem; color: #999; }
+
+        /* ===== RESERVE BAR ===== */
+        .reserve-bar { position: fixed; bottom: 0; left: 0; width: 100%; padding: 12px 15px; background-color: #EFEBE3; z-index: 100; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }
+        .btn-reserve { display: block; width: 100%; background-color: #2C2C2C; color: #FFFFFF; text-decoration: none; padding: 15px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
+
+        @media (min-width: 768px) {
+            .navbar { padding: 20px 40px; }
+            .logo a { font-size: 1.4rem; letter-spacing: 3px; }
+            .btn-plan { padding: 12px 22px; font-size: 0.7rem; }
+            .page-header h1 { font-size: 3rem; }
+            .contact-buttons { flex-direction: row; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">UNP SOUL VOYAGE</a>
+        </div>
+        <div class="nav-right">
+            <a href="booking.html" class="btn-plan">Plan Your Trip</a>
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <div class="menu-icon">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Plan Your Trip</h1>
+        <p>Fill in the form below and our team will get back to you within 24 hours with a personalised itinerary.</p>
+    </section>
+
+    <section class="form-section">
+        <div class="form-container">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone / WhatsApp</label>
+                    <input type="tel" id="phone" placeholder="+255 ..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <select id="destination">
+                        <option value="Zanzibar">Zanzibar</option>
+                        <option value="Serengeti">Serengeti National Park</option>
+                        <option value="Ngorongoro">Ngorongoro Crater</option>
+                        <option value="Tarangire">Tarangire National Park</option>
+                        <option value="Mikumi">Mikumi National Park</option>
+                        <option value="Ruaha">Ruaha National Park</option>
+                        <option value="Cultural Tour">Cultural Tour (Stone Town, Bagamoyo, Kilwa)</option>
+                        <option value="Multiple">Multiple Destinations</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="travelers">Number of Travelers</label>
+                    <input type="number" id="travelers" min="1" value="2">
+                </div>
+
+                <div class="form-group">
+                    <label for="dates">Preferred Travel Dates</label>
+                    <input type="text" id="dates" placeholder="e.g. July 2026, 7 days">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Details</label>
+                    <textarea id="message" placeholder="Tell us about your dream trip..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Send via WhatsApp</button>
+                <p class="form-note">Your message will be sent directly to our team on WhatsApp.</p>
+            </form>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Prefer to Contact Us Directly?</h2>
+        <p>Send us a message and our team will design your dream journey.</p>
+        <div class="contact-buttons">
+            <a href="https://wa.me/255655728982" class="btn-whatsapp" target="_blank">WhatsApp</a>
+            <a href="mailto:info@unpsoulvoyage.com" class="btn-email">Send Email</a>
+        </div>
+        <p class="copyright">Copyright 2026, UNP Soul Voyage S.a.r.l.</p>
+    </section>
+
+    <div class="reserve-bar">
+        <a href="https://wa.me/255655728982" class="btn-reserve">Reserve</a>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var destination = document.getElementById('destination').value;
+            var travelers = document.getElementById('travelers').value;
+            var dates = document.getElementById('dates').value;
+            var message = document.getElementById('message').value;
+
+            var text = "Hello UNP Soul Voyage! I would like to plan a trip.%0A%0A";
+            text += "*Name:* " + name + "%0A";
+            text += "*Email:* " + email + "%0A";
+            text += "*Phone:* " + phone + "%0A";
+            text += "*Destination:* " + destination + "%0A";
+            text += "*Travelers:* " + travelers + "%0A";
+            text += "*Dates:* " + dates + "%0A";
+            text += "*Message:* " + message;
+
+            var whatsappUrl = "https://wa.me/255655728982?text=" + text;
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+
+</body>
+</html>

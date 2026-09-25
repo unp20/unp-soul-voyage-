@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Tours | UNP Soul Voyage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #EFEBE3; color: #2C2C2C; line-height: 1.6; overflow-x: hidden; padding-bottom: 80px; }
+
+        /* ===== NAVBAR ===== */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 18px; background-color: #EFEBE3; position: fixed; top: 0; width: 100%; z-index: 100; }
+        .logo a { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 2px; text-decoration: none; color: #2C2C2C; font-weight: 400; font-style: italic; white-space: nowrap; }
+        .nav-right { display: flex; align-items: center; gap: 8px; }
+        .btn-plan { background-color: #C49A7A; color: #FFFFFF; padding: 8px 12px; text-decoration: none; font-size: 0.55rem; letter-spacing: 1px; text-transform: uppercase; border-radius: 2px; white-space: nowrap; }
+        .search-icon { width: 18px; height: 18px; cursor: pointer; }
+        .menu-icon { display: flex; flex-direction: column; gap: 4px; cursor: pointer; }
+        .menu-icon span { width: 20px; height: 1.5px; background-color: #2C2C2C; }
+
+        /* ===== HERO ===== */
+        .hero-section { position: relative; width: 100%; height: 75vh; background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; margin-top: 60px; }
+        .hero-section::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.35); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: #FFFFFF; width: 90%; }
+        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: 3px; font-weight: 400; margin-bottom: 10px; line-height: 1.2; }
+        .hero-sub { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; }
+
+        /* ===== INTRO ===== */
+        .intro-section { padding: 60px 22px; text-align: center; max-width: 800px; margin: 0 auto; background-color: #EFEBE3; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 20px; color: #2C2C2C; line-height: 1.3; }
+        .section-text { font-size: 0.9rem; color: #555; font-weight: 300; line-height: 1.8; }
+
+        /* ===== PLACES SECTION ===== */
+        .places-section { background-color: #E8E3DA; padding: 60px 22px; }
+        .places-grid { display: flex; flex-direction: column; gap: 25px; max-width: 800px; margin: 0 auto; }
+        .place-card { background-color: #EFEBE3; padding: 0 0 25px 0; overflow: hidden; }
+        .place-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .place-card-content { padding: 22px 18px 0 18px; }
+        .place-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 400; margin-bottom: 8px; }
+        .place-card p { font-size: 0.85rem; color: #666; font-weight: 300; }
+
+        /* ===== CULTURE SECTION ===== */
+        .culture-section { background-color: #EFEBE3; padding: 60px 22px; }
+        .culture-section .section-title { text-align: center; }
+        .culture-grid { display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto; }
+        .culture-item { padding: 22px; border: 1px solid rgba(0,0,0,0.1); text-align: left; background-color: #E8E3DA; }
+        .culture-item h4 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 400; margin-bottom: 8px; }
+        .culture-item p { font-size: 0.85rem; color: #666; font-weight: 300; }
+
+        /* ===== CONTACT ===== */
+        .contact-section { padding: 60px 22px 80px 22px; text-align: center; background-color: #EFEBE3; }
+        .contact-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 15px; }
+        .contact-section p { font-size: 0.85rem; color: #666; margin-bottom: 25px; font-weight: 300; }
+        .contact-buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+        .btn-whatsapp { display: inline-block; padding: 14px 30px; background-color: #25D366; color: #FFFFFF; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; width: 100%; max-width: 300px; }
+        .btn-email { display: inline-block; padding: 14px 30px; background-color: #C49A7A; color: #FFFFFF; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; width: 100%; max-width: 300px; }
+        .copyright { margin-top: 35px; font-size: 0.65rem; color: #999; }
+
+        /* ===== RESERVE BAR ===== */
+        .reserve-bar { position: fixed; bottom: 0; left: 0; width: 100%; padding: 12px 15px; background-color: #EFEBE3; z-index: 100; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }
+        .btn-reserve { display: block; width: 100%; background-color: #2C2C2C; color: #FFFFFF; text-decoration: none; padding: 15px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
+
+        @media (min-width: 768px) {
+            .navbar { padding: 20px 40px; }
+            .logo a { font-size: 1.4rem; letter-spacing: 3px; }
+            .btn-plan { padding: 12px 22px; font-size: 0.7rem; }
+            .places-grid { flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
+            .place-card { flex: 0 0 48%; }
+            .hero-content h1 { font-size: 4rem; }
+            .section-title { font-size: 2.2rem; }
+            .contact-buttons { flex-direction: row; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">UNP SOUL VOYAGE</a>
+        </div>
+        <div class="nav-right">
+            <a href="booking.html" class="btn-plan">Plan Your Trip</a>
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <div class="menu-icon">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>CULTURAL TOURS</h1>
+            <p class="hero-sub">Discover Tanzania's Rich Heritage</p>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <h2 class="section-title">A Journey Through History</h2>
+        <p class="section-text">
+            Tanzania is home to some of the most important historical and cultural sites in East Africa. From the ancient Swahili trading ports of Kilwa and Bagamoyo to the UNESCO World Heritage Site of Stone Town, our cultural tours offer a deep connection with the people, history, and traditions of this remarkable land.
+        </p>
+    </section>
+
+    <!-- PLACES SECTION -->
+    <section class="places-section">
+        <div class="places-grid">
+            <div class="place-card">
+                <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=800&auto=format&fit=crop" alt="Stone Town, Zanzibar">
+                <div class="place-card-content">
+                    <h3>Stone Town, Zanzibar</h3>
+                    <p>A UNESCO World Heritage Site — historic streets, old buildings, and Swahili culture.</p>
+                </div>
+            </div>
+            <div class="place-card">
+                <img src="https://images.unsplash.com/photo-1580745089072-2d3f5b5c5d5c?q=80&w=800&auto=format&fit=crop" alt="Bagamoyo, Tanzania">
+                <div class="place-card-content">
+                    <h3>Bagamoyo</h3>
+                    <p>Once a major slave and ivory trading port. A place of deep historical significance.</p>
+                </div>
+            </div>
+            <div class="place-card">
+                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=800&auto=format&fit=crop" alt="Kilwa Kisiwani">
+                <div class="place-card-content">
+                    <h3>Kilwa Kisiwani</h3>
+                    <p>Ancient ruins of a powerful Swahili trading empire — a UNESCO World Heritage Site.</p>
+                </div>
+            </div>
+            <div class="place-card">
+                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=800&auto=format&fit=crop" alt="Maasai Village">
+                <div class="place-card-content">
+                    <h3>Maasai Villages</h3>
+                    <p>Visit authentic Maasai communities in northern Tanzania and learn their traditions.</p>
+                </div>
+            </div>
+            <div class="place-card">
+                <img src="https://images.unsplash.com/photo-1504432842672-1a79f78e4084?q=80&w=800&auto=format&fit=crop" alt="Zanzibar Spice Farms">
+                <div class="place-card-content">
+                    <h3>Spice Farms, Zanzibar</h3>
+                    <p>Discover the history of the spice trade that made Zanzibar famous worldwide.</p>
+                </div>
+            </div>
+            <div class="place-card">
+                <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?q=80&w=800&auto=format&fit=crop" alt="Olduvai Gorge">
+                <div class="place-card-content">
+                    <h3>Olduvai Gorge</h3>
+                    <p>The "Cradle of Mankind" — where some of the earliest human fossils were discovered.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CULTURE SECTION -->
+    <section class="culture-section">
+        <h2 class="section-title">Cultural Experiences</h2>
+        <div class="culture-grid">
+            <div class="culture-item">
+                <h4>Swahili Culture</h4>
+                <p>Experience the language, food, music, and traditions of the Swahili people along the coast.</p>
+            </div>
+            <div class="culture-item">
+                <h4>Maasai Traditions</h4>
+                <p>Learn about the Maasai warriors, their beadwork, and their deep connection with nature.</p>
+            </div>
+            <div class="culture-item">
+                <h4>Historical Sites</h4>
+                <p>Visit ancient ruins, museums, and monuments that tell the story of Tanzania's past.</p>
+            </div>
+            <div class="culture-item">
+                <h4>Local Markets</h4>
+                <p>Explore vibrant local markets and shop for handmade crafts, fabrics, and spices.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Plan Your Cultural Tour</h2>
+        <p>Send us a message and our team will design your dream cultural experience.</p>
+        <div class="contact-buttons">
+            <a href="https://wa.me/255655728982" class="btn-whatsapp" target="_blank">WhatsApp</a>
+            <a href="mailto:info@unpsoulvoyage.com" class="btn-email">Send Email</a>
+        </div>
+        <p class="copyright">Copyright 2026, UNP Soul Voyage S.a.r.l.</p>
+    </section>
+
+    <div class="reserve-bar">
+        <a href="https://wa.me/255655728982" class="btn-reserve">Reserve</a>
+    </div>
+
+</body>
+</html>
